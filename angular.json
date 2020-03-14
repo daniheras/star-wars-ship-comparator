@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "star-wars-ships-comparator": {
@@ -145,6 +145,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "star-wars-ships-comparator"
+    }
+  },
+  "defaultProject": "star-wars-ships-comparator",
+  "cli": {
+    "analytics": "5815dc4e-0405-4f69-a9c4-c5993e810c04"
+  }
 }
