@@ -1,0 +1,30 @@
+@import '../styles/variables.scss';
+
+.tabs {
+  display: flex;
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+  text-transform: uppercase;
+
+  &__tab {
+    padding: 1rem 3rem;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:first-of-type {
+      border-radius: 12px 0 0 0;
+    }
+
+    &:hover {
+      box-shadow: $primary-inset-shadow;
+    }
+
+    &--selected {
+      background: $background-primary-darker;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}

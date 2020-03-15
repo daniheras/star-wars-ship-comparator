@@ -7,7 +7,7 @@
 
 .ship-selector {
   width: 240px;
-  padding: 0 1rem;
+  padding: 4rem 1rem 0 1rem;
 
   &__ship-card-wrapper {
     padding: 10px 0;
@@ -26,4 +26,6 @@
   flex-grow: 1;
   background: $background-primary-darker;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 }

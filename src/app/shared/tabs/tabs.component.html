@@ -1,0 +1,9 @@
+<section block="tabs">
+  <div
+    *ngFor="let tab of tabs" elem="tab"
+    [mod]="{ selected: tab.selected }"
+    (click)="changeTab.emit(tab.id)"
+  >
+    {{ tab.value }}
+  </div>
+</section>

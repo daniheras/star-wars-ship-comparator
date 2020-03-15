@@ -5,6 +5,7 @@ import { ComparatorRoutingModule } from './comparator-routing.module';
 import { ComparatorComponent } from './comparator.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CardModule } from 'src/app/shared/card/card.module';
+import { TabsModule } from 'src/app/shared/tabs/tabs.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CardModule } from 'src/app/shared/card/card.module';
     CommonModule,
     ComparatorRoutingModule,
     SharedModule,
-    CardModule
+    CardModule,
+    TabsModule
   ]
 })
 export class ComparatorModule {}
