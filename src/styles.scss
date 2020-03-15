@@ -2,3 +2,7 @@
 
 // Third party styles
 @import 'normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700,900&display=swap');
+
+// Core styles
+@import './app/core/styles/layout.scss'

@@ -1,0 +1,15 @@
+@import '../../shared/styles/variables.scss';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: $background-primary;
+  padding: 2rem;
+}
+
+*{
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+}

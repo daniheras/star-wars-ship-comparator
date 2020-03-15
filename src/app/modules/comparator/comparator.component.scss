@@ -1,0 +1,14 @@
+.comparator-page {
+  height: 100%;
+  display: flex;
+}
+
+.ship-selector {
+  width: 240px;
+  background: red;
+}
+
+.chart {
+  flex-grow: 1;
+  background: green;
+}
