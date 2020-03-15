@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TabFields } from 'src/app/shared/tabs/tabs.types';
+import { ComparatorService } from './comparator.service';
 
 @Component({
   selector: 'swsc-comparator',
@@ -40,9 +41,13 @@ export class ComparatorComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    public comparatorService: ComparatorService
+  ) {
+  }
 
   ngOnInit(): void {
+    this.comparatorService.fetchShips();
   }
 
   changeTab(tabId: string) {
