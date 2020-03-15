@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  &__bar {
+    height: 500px;
+    width: 80px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    .bar-filler {
+      border-radius: 12px;
+      background: #fff;
+      width: 100%;
+      transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: $primary-shadow;
+    }
+  }
+
+  &__name, &__value {
+    text-align: center;
+    font-weight: 700;
+    color: $text-primary;
+    padding: 1.5rem 0;
+  }
+
+  &__name {
+    transform: rotate(45deg);
+  }
+}

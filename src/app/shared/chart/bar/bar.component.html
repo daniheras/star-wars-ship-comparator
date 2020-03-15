@@ -1,0 +1,11 @@
+<div block="bar-chart">
+  <div elem="bar">
+    <span elem="value">
+      {{ data.value }}
+    </span>
+    <div class="bar-filler" [style]="{ height: (fill * 100) + '%' }"></div>
+  </div>
+  <span elem="name">
+    {{ data.name }}
+  </span>
+</div>

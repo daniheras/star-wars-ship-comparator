@@ -28,4 +28,9 @@
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+
+  &__body {
+    padding: 4rem;
+    flex-grow: 1;
+  }
 }
