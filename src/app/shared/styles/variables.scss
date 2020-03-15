@@ -5,10 +5,12 @@
 $background-primary: #ECEFF0;
 $background-primary-darker: #DFE5E7;
 $text-primary: #606060;
+$light: #fff;
 
 
 // #- Shadows -#
 
 $primary-shadow-color: rgba(0, 0, 0, 0.05);
 $primary-shadow: 0px 4px 4px $primary-shadow-color;
+$primary-shadow-elevated: 0px 6px 4px rgba(0, 0, 0, 0.1);
 $primary-inset-shadow: inset 0px 4px 4px $primary-shadow-color;

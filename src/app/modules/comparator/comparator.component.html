@@ -1,5 +1,15 @@
 <section block="comparator-page">
   <section block="ship-selector">
+    <div elem="ship-card-wrapper">
+      <swsc-card padded>
+        Ship name
+      </swsc-card>
+    </div>
+    <div elem="ship-card-wrapper">
+      <swsc-card padded>
+        {{ ('Ship name very long noseque'.length>15)? ('Ship name very long noseque' | slice:0:15)+'..':('Ship name very long noseque') }}
+      </swsc-card>
+    </div>
   </section>
   <section block="chart">
   </section>

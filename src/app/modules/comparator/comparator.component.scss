@@ -1,3 +1,5 @@
+@import '../../shared/styles/variables.scss';
+
 .comparator-page {
   height: 100%;
   display: flex;
@@ -5,10 +7,23 @@
 
 .ship-selector {
   width: 240px;
-  background: red;
+  padding: 0 1rem;
+
+  &__ship-card-wrapper {
+    padding: 10px 0;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
 }
 
 .chart {
   flex-grow: 1;
-  background: green;
+  background: $background-primary-darker;
+  border-radius: 12px;
 }
