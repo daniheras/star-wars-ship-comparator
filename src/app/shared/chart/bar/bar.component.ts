@@ -9,8 +9,11 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, Input } 
 })
 export class BarComponent implements OnInit {
 
-  @Input() fill: number;
+  @Input() set fill(val) {
+    this.fillValue = val;
+  }
   @Input() data: { value: string, name: string };
+  fillValue;
 
   constructor() { }
 

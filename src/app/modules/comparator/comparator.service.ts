@@ -3,7 +3,6 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { Observable } from 'rxjs';
 import { pluck } from 'rxjs/operators';
-import { ApolloQueryResult } from 'apollo-client';
 
 export interface Starship {
   __typename?: 'Starship';

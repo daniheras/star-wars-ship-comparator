@@ -3,7 +3,9 @@
 .bar-chart {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 30px;
+  align-items: center;
+  width: 120px;
 
   &__bar {
     height: 500px;
@@ -17,6 +19,7 @@
       border-radius: 12px;
       background: #fff;
       width: 100%;
+      height: 0;
       transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       box-shadow: $primary-shadow;
     }
@@ -28,8 +31,23 @@
     color: $text-primary;
     padding: 1.5rem 0;
   }
+}
 
-  &__name {
-    transform: rotate(45deg);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn .4s linear forwards;
+}
+
+.no-data {
+  text-align: center;
+  color: $text-primary;
 }

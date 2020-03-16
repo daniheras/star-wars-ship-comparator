@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TabFields } from 'src/app/shared/tabs/tabs.types';
 import { ComparatorService } from './comparator.service';
+import { tap, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'swsc-comparator',
@@ -9,6 +11,9 @@ import { ComparatorService } from './comparator.service';
 })
 export class ComparatorComponent implements OnInit {
 
+  ships$: Observable<any>;
+  ships: any[];
+  checkedShips: any[];
   tabs: TabFields = [
     {
       id: 'crew',
@@ -17,10 +22,10 @@ export class ComparatorComponent implements OnInit {
     },
     {
       id: 'costInCredits',
-      value: 'Cost in Credits'
+      value: 'Cost in Credits',
     },
     {
-      id: 'cargoCapactiy',
+      id: 'cargoCapacity',
       value: 'Cargo Capacity'
     },
     {
@@ -28,7 +33,7 @@ export class ComparatorComponent implements OnInit {
       value: 'Hyperdrive Rating'
     },
     {
-      id: 'lenght',
+      id: 'length',
       value: 'Length'
     },
     {
@@ -40,6 +45,7 @@ export class ComparatorComponent implements OnInit {
       value: 'Passengers'
     }
   ];
+  selectedTab = this.tabs.filter(tab => tab.selected)[0].id;
 
   constructor(
     public comparatorService: ComparatorService
@@ -48,6 +54,17 @@ export class ComparatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.comparatorService.fetchShips();
+    this.ships$ = this.comparatorService.ships$.pipe(
+      map(ships => {
+        return ships.map(ship => ({
+          ...ship,
+          checked: false
+        }));
+      }),
+      tap(ships => {
+        this.ships = ships;
+      })
+    );
   }
 
   changeTab(tabId: string) {
@@ -56,6 +73,16 @@ export class ComparatorComponent implements OnInit {
       id: tab.id,
       value: tab.value
     }));
+    this.selectedTab = tabId;
+    console.log(this.selectedTab)
+  }
+
+  handleChecked(toggledShipId) {
+    this.ships = this.ships.map(ship => ({
+      ...ship,
+      checked: (toggledShipId === ship.id) ? !ship.checked : !!ship.checked
+    }));
+    this.checkedShips = this.ships.filter(ship => ship.checked);
   }
 
 }

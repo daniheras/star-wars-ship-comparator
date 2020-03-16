@@ -1,19 +1,22 @@
-<section block="comparator-page">
-  <section block="ship-selector">
-    <div elem="ship-card-wrapper" *ngFor="let ship of (comparatorService.ships$ | async)">
-      <swsc-card padded>
-        {{ (ship.name.length>13)? (ship.name | slice:0:13)+'..':(ship.name) }}
-      </swsc-card>
-    </div>
+<ng-container *ngIf="(ships$ | async) as ships">
+  <section block="comparator-page">
+    <section block="ship-selector">
+      <div elem="ship-card-wrapper" *ngFor="let ship of ships">
+        <swsc-card padded (check)="handleChecked(ship.id)">
+          {{ (ship.name.length>13)? (ship.name | slice:0:13)+'..':(ship.name) }}
+        </swsc-card>
+      </div>
+    </section>
+    <section block="chart">
+      <swsc-tabs
+        [tabs]="tabs"
+        (changeTab)="changeTab($event)"
+      ></swsc-tabs>
+      <main elem="body">
+        <swsc-chart [data]="checkedShips" [bindValue]="selectedTab"></swsc-chart>
+      </main>
+    </section>
   </section>
-  <section block="chart">
-    <swsc-tabs
-      [tabs]="tabs"
-      (changeTab)="changeTab($event)"
-    ></swsc-tabs>
-    <main elem="body">
-      <swsc-chart></swsc-chart>
-    </main>
-  </section>
-</section>
+
+</ng-container>
 

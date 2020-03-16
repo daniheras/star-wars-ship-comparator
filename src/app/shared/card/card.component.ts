@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'swsc-card',
@@ -10,6 +10,7 @@ export class CardComponent implements OnInit {
 
   @Input() padded: boolean | string = false;
   @Input() checked: boolean | string = false;
+  @Output() check: EventEmitter<void> = new EventEmitter();
 
   constructor() { }
 
@@ -29,6 +30,7 @@ export class CardComponent implements OnInit {
 
   toggleCheckedStatus() {
     this.checked = !this.checked;
+    this.check.emit();
   }
 
 }

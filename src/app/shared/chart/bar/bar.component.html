@@ -1,11 +1,19 @@
-<div block="bar-chart">
+<div block="bar-chart" class="fadeIn ">
   <div elem="bar">
-    <span elem="value">
-      {{ data.value }}
-    </span>
-    <div class="bar-filler" [style]="{ height: (fill * 100) + '%' }"></div>
+    <ng-container *ngIf="data.value; else elseTemplate">
+      <span elem="value">
+        {{ data.value }}
+      </span>
+      <div class="bar-filler" [style]="{ height: (fillValue * 100) + '%' }"></div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <div class="no-data">
+        No data available
+      </div>
+    </ng-template>
   </div>
   <span elem="name">
     {{ data.name }}
   </span>
 </div>
+

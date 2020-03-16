@@ -2,4 +2,7 @@
 
 .charts {
   display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 1200px;
 }

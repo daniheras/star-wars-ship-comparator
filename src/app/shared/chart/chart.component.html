@@ -1,5 +1,13 @@
-<div block="charts">
-  <swsc-bar [fill]="0.3" [data]="{ value: 400, name: 'X-Wing' }"></swsc-bar>
-  <swsc-bar [fill]="1" [data]="{ value: 20000, name: 'Death Star' }"></swsc-bar>
-  <swsc-bar [fill]="0.5" [data]="{ value: 700, name: 'Falcon' }"></swsc-bar>
-</div>
+<ng-container *ngIf="!!_data && _data.length >= 2; else elseTemplate">
+  <div block="charts">
+    <swsc-bar
+      *ngFor="let item of _data"
+      [fill]="getFillPercentage(item[_bindValue])"
+      [data]="{ value: item[_bindValue], name: item.name }"
+    ></swsc-bar>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  Select at least two items from the left side to compare them
+</ng-template>
+

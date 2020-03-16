@@ -10,6 +10,7 @@
   padding: 4rem 1rem 0 1rem;
   max-height: 100%;
   overflow: auto;
+  min-width: 250px;
 
   &::-webkit-scrollbar {
     display: none;
