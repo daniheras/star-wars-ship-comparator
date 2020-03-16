@@ -8,13 +8,6 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, Input } 
   encapsulation: ViewEncapsulation.None
 })
 export class ChartComponent implements OnInit {
-  /*
-  set data(value: any[]) {
-    this.maxValue = Math.max(...value.map(item => item[this.bindValue]));
-    this.items = value;
-    console.log('hola')
-  }
-  */
 
  @Input()
  set data(data: any[]) {
@@ -42,7 +35,6 @@ export class ChartComponent implements OnInit {
   }
 
   getFillPercentage(value: number) {
-    console.log(value, this.maxValue);
     return value / this.maxValue;
   }
 

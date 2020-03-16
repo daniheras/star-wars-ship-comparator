@@ -74,7 +74,6 @@ export class ComparatorComponent implements OnInit {
       value: tab.value
     }));
     this.selectedTab = tabId;
-    console.log(this.selectedTab)
   }
 
   handleChecked(toggledShipId) {
